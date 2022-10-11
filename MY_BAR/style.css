@@ -1,3 +1,10 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+
+}
+
+
 body {
     margin: 0;
 }
@@ -6,13 +13,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aliceblue;
+    background-color: var(--background-color);
     padding: 8px 12px;
 }
 
 a {
     text-decoration: none;
-    color:blue;
+    color:var(--text-color);
 }
 
 .navbar_logo {
@@ -29,12 +36,62 @@ a {
     padding: 8px 12px;
 }
 
+.navbar_menu li:hover {
+    background-color: #4E8AFF;
+    border-radius: 4px;
+}
+
 
 .navbar_icons {
     list-style: none;
     display: flex;
+    padding-left: 0;
 }
 
 .navbar_icons li {
     padding: 8px 12px;
+}
+
+.navbar_toggle {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar_menu{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar_menu li{
+        width: 100%;
+        /* 너비가 넓어지면 텍스트 자동으로 왼쪽으로 정렬 */
+        text-align: center;
+    }
+
+    .navbar_icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar_toggle {
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_icons.active {
+        display: flex;
+    }
 }
