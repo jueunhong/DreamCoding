@@ -145,3 +145,20 @@ const simpleMultiply = (a, b) => {
     console.log('IIFE');
 })();
 
+
+//calculate function
+const calculate =  (command, a, b) => {
+   if(command == 'add'){
+        console.log(a + b);
+    } else if(command == 'minus') {
+        console.log(a - b);
+    } else if(command == 'multiply'){
+        console.log(a * b);
+    } else if(command == 'divide'){
+        console.log( a / b);
+    } else if(command == 'remainder'){
+        console.log(a % b);
+   }
+}
+
+calculate('minus', 14, 4);
